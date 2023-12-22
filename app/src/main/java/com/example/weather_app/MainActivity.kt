@@ -22,7 +22,7 @@ const val API_KEY="0b6068d8628b40c6b7a130405232212"//Константа ключ
 class MainActivity : AppCompatActivity() {
     //private lateinit var binding: ActivityMainBinding //buildFeatures viewBinding = true
     override fun onCreate(savedInstanceState: Bundle?) {
-
+//тест
         super.onCreate(savedInstanceState)
 
         binding=ActivityMainBinding.inflate(layoutInflater)
