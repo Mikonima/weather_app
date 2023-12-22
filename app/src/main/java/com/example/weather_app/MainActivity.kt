@@ -7,11 +7,20 @@ import android.util.Log
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.weather_app.databinding.ActivityMainBinding
+import com.example.weather_app.fragments.MainFragment
+import org.json.JSONObject
 import kotlin.math.log
-
+class MainActivity : AppCompatActivity(){
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        supportFragmentManager.beginTransaction().replace(R.id.placeholder,MainFragment()).commit()//Перенаправление на MAIN FRAGMENT
+    }
+}
+/*
 const val API_KEY="0b6068d8628b40c6b7a130405232212"//Константа ключ AP WeatherAPI.com
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding //buildFeatures viewBinding = true
+    //private lateinit var binding: ActivityMainBinding //buildFeatures viewBinding = true
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -31,7 +40,10 @@ class MainActivity : AppCompatActivity() {
             url,
             {
              response->
-                Log.d("MyLog","Успех:$response")//результат успеха
+                val obj =JSONObject(response)//Достаём JSON объект
+                val temp=obj.getJSONObject("current")
+
+                Log.d("MyLog","Успех:${temp.getString("temp_c")}")//результат успеха
 
             },
             {
@@ -41,4 +53,4 @@ class MainActivity : AppCompatActivity() {
         queue.add(stringRequest)
 
     }//функция запроса и возврата
-}
+}*/
