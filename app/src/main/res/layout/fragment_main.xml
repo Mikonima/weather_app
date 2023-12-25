@@ -69,7 +69,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imWeather" />
 
             <TextView
-                android:id="@+id/TvTemp"
+                android:id="@+id/tvcurrentTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
@@ -87,7 +87,7 @@
                 android:textColor="#EDE6E6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/TvTemp" />
+                app:layout_constraintTop_toBottomOf="@+id/tvcurrentTemp" />
 
             <TextView
                 android:id="@+id/tvMaxMin"
@@ -125,11 +125,10 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_width="363dp"
+        android:layout_height="615dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="@+id/tabLayout"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
